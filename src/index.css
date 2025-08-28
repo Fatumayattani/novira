@@ -1,68 +1,186 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: 250 30% 98%;
+    --foreground: 250 20% 15%;
+
+    --card: 250 50% 98%;
+    --card-foreground: 250 20% 15%;
+
+    --popover: 250 50% 98%;
+    --popover-foreground: 250 20% 15%;
+
+    --primary: 260 80% 65%;
+    --primary-foreground: 250 30% 98%;
+
+    --secondary: 320 60% 75%;
+    --secondary-foreground: 250 20% 15%;
+
+    --muted: 250 20% 95%;
+    --muted-foreground: 250 10% 45%;
+
+    --accent: 200 80% 70%;
+    --accent-foreground: 250 20% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 250 30% 98%;
+
+    --border: 250 20% 90%;
+    --input: 250 20% 95%;
+    --ring: 260 80% 65%;
+
+    /* Magical gradients for storytelling */
+    --gradient-magic: linear-gradient(135deg, hsl(260 80% 65%), hsl(320 60% 75%));
+    --gradient-dream: linear-gradient(45deg, hsl(200 80% 70%), hsl(260 80% 65%));
+    --gradient-story: linear-gradient(180deg, hsl(250 30% 98%), hsl(250 20% 95%));
+    
+    /* Animation effects */
+    --glow-magic: 0 0 30px hsl(260 80% 65% / 0.3);
+    --glow-dream: 0 0 20px hsl(320 60% 75% / 0.4);
+    
+    /* Storytelling specific tokens */
+    --story-active: 120 70% 60%;
+    --story-recording: 0 80% 65%;
+    --story-processing: 45 90% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 250 30% 8%;
+    --foreground: 250 20% 90%;
+
+    --card: 250 20% 12%;
+    --card-foreground: 250 20% 90%;
+
+    --popover: 250 20% 12%;
+    --popover-foreground: 250 20% 90%;
+
+    --primary: 260 80% 70%;
+    --primary-foreground: 250 30% 8%;
+
+    --secondary: 320 60% 65%;
+    --secondary-foreground: 250 20% 90%;
+
+    --muted: 250 10% 20%;
+    --muted-foreground: 250 10% 60%;
+
+    --accent: 200 80% 65%;
+    --accent-foreground: 250 20% 90%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 250 20% 90%;
+
+    --border: 250 10% 25%;
+    --input: 250 10% 20%;
+    --ring: 260 80% 70%;
+
+    /* Dark mode magical gradients */
+    --gradient-magic: linear-gradient(135deg, hsl(260 80% 70%), hsl(320 60% 65%));
+    --gradient-dream: linear-gradient(45deg, hsl(200 80% 65%), hsl(260 80% 70%));
+    --gradient-story: linear-gradient(180deg, hsl(250 30% 8%), hsl(250 10% 20%));
+    
+    --glow-magic: 0 0 40px hsl(260 80% 70% / 0.4);
+    --glow-dream: 0 0 30px hsl(320 60% 65% / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-story);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .gradient-magic {
+    background: var(--gradient-magic);
+  }
+  
+  .gradient-dream {
+    background: var(--gradient-dream);
+  }
+  
+  .glow-magic {
+    box-shadow: var(--glow-magic);
+  }
+  
+  .glow-dream {
+    box-shadow: var(--glow-dream);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-story-pulse {
+    animation: story-pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes story-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
   }
 }
