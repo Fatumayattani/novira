@@ -7,7 +7,7 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <h1 className="text-3xl italic font-extrabold text-primary tracking-wide drop-shadow-md">
-          Novira
+          Novira AI
          </h1>
 
         </div>
