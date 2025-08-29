@@ -6,9 +6,10 @@ export const Navbar = () => {
     <nav className="w-full bg-card/50 backdrop-blur-md border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-primary">
-            Novira
-          </h1>
+          <h1 className="text-3xl italic font-extrabold text-primary tracking-wide drop-shadow-md">
+          Novira
+         </h1>
+
         </div>
         
         <div className="flex items-center gap-3">

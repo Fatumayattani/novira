@@ -12,21 +12,6 @@ export const Footer = () => {
             </p>
           </div>
           
-          <div className="flex items-center gap-6">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
-            
-            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-              Made with <Heart className="w-4 h-4 text-red-500" fill="currentColor" /> by Lovable
-            </div>
-          </div>
         </div>
         
         <div className="mt-6 pt-4 border-t border-border/50 text-center">
