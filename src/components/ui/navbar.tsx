@@ -15,7 +15,7 @@ export const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => window.open("https://github.com", "_blank")}
+            onClick={() => window.open("https://github.com/Fatumayattani/novira", "_blank")}
             className="hover:glow-magic"
           >
             <Github className="h-5 w-5" />
